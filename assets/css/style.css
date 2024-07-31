@@ -314,6 +314,7 @@ main {
   #SIDEBAR
 \*-----------------------------------*/
 
+/* Sidebar container styling */
 .sidebar {
   margin-bottom: 15px;
   max-height: 112px;
@@ -321,8 +322,10 @@ main {
   transition: var(--transition-2);
 }
 
+/* Expand sidebar when active */
 .sidebar.active { max-height: 405px; }
 
+/* Sidebar info styling */
 .sidebar-info {
   position: relative;
   display: flex;
@@ -336,6 +339,7 @@ main {
   border-radius: 20px;
 }
 
+/* Sidebar name styling */
 .info-content .name {
   color: var(--white-2);
   font-size: var(--fs-3);
@@ -344,7 +348,42 @@ main {
   margin-bottom: 10px;
 }
 
-.info-content .title {
+/* Title container styling */
+.title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically (if needed) */
+  width: 100%; /* Ensures full width for centering */
+  height: auto; /* Adjust based on your layout */
+}
+
+/* Title container styling with some centering adjustments */
+.title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically (if needed) */
+  text-align: center; /* Ensures text inside is centered */
+}
+
+/* Title styling */
+/* Title container styling */
+.title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically */
+  width: 100%; /* Ensures full width for centering */
+  height: auto; /* Adjust based on your layout */
+  text-align: center; /* Ensures text inside is centered */
+}
+
+/* Title styling */
+.title-container p.title {
   color: var(--white-1);
   background: var(--onyx);
   font-size: var(--fs-8);
@@ -352,8 +391,32 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+  margin: 10px 0; /* Margin to separate from other titles */
 }
 
+/* Dynamic titles styling */
+.dynamic-title {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  margin: 0;
+  opacity: 0;
+  position: absolute; /* Keeps titles in the same spot */
+  top: 50%; /* Centers vertically */
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%); /* Centers the text itself */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  text-align: center; /* Ensures text inside is centered */
+}
+
+/* Animation for active title */
+.title-container .active {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0); /* Centers and animates */
+}
+
+
+/* Button styling */
 .info_more-btn {
   position: absolute;
   top: -15px;
@@ -386,6 +449,7 @@ main {
 
 .info_more-btn span { display: none; }
 
+/* Sidebar additional info styling */
 .sidebar-info_more {
   opacity: 0;
   visibility: hidden;
@@ -397,6 +461,7 @@ main {
   visibility: visible;
 }
 
+/* Contacts list styling */
 .contacts-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -429,6 +494,7 @@ main {
 
 .contact-info address { font-style: normal; }
 
+/* Social list styling */
 .social-list {
   display: flex;
   justify-content: flex-start;
@@ -443,11 +509,7 @@ main {
   font-size: 18px;
 }
 
-
 .social-item .social-link:hover { color: var(--light-gray); }
-
-
-
 
 
 /*-----------------------------------*\
@@ -859,7 +921,7 @@ main {
 }
 
 .skills-item, .technologies-item {
-  background: var(--border-gradient-onyx);
+  background: var(--jet);
   padding: 20px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);

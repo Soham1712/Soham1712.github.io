@@ -30,6 +30,29 @@
   <!--
     - #MAIN
   -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const titles = document.querySelectorAll('.dynamic-title');
+      let currentIndex = 0;
+
+      function changeTitle() {
+        // Hide all titles
+        titles.forEach(title => title.classList.remove('active'));
+
+        // Show the current title
+        titles[currentIndex].classList.add('active');
+
+        // Move to the next title
+        currentIndex = (currentIndex + 1) % titles.length;
+      }
+
+      // Change title every 3 seconds
+      setInterval(changeTitle, 3000);
+
+      // Initialize with the first title visible
+      changeTitle();
+    });
+  </script>
 
   <main>
 
@@ -46,11 +69,14 @@
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Soham Shimpi</h1>
-
-          <p class="title">Software Developer</p>
-        </div>
-
+          <h1 class="name" title="Soham Shimpi">Soham Shimpi</h1>
+          <div class="title-container">
+            <p class="dynamic-title">Software Developer</p>
+            <p class="dynamic-title">Data Science Enthusiast</p>
+            <p class="dynamic-title">Tech Innovator</p>
+          </div>
+          </div>
+        
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
 
@@ -174,7 +200,7 @@
             <button class="navbar-link" data-nav-link="resume">Resume</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
+            <button class="navbar-link" data-nav-link="projects">Projects</button>
           </li>
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link="certifications">Certifications</button>
@@ -184,7 +210,6 @@
           </li>
         </ul>
       </nav>
-      
 
 
 
@@ -206,7 +231,7 @@
         </p>
 
         <p>
-          With a solid background in software development, machine learning, and data science, I have worked on various projects ranging from web development to complex data analytics. I thrive on challenges and continuously seek to improve my skills and knowledge.
+          With a solid background in machine learning, data science and software development. I have worked on various projects ranging from web development to complex data analytics. I thrive on challenges and continuously seek to improve my skills and knowledge.
         </p>
 
         <p>
@@ -525,7 +550,8 @@
               <h4 class="h4 timeline-item-title">M.S. Computer Science</h4>
               <span>August 2023 – May 2025</span>
               <p class="timeline-text">
-                Arizona State University, Tempe, AZ. Achieved a CGPA of 3.94. 
+                Arizona State University, Tempe, AZ. Achieved a CGPA of 3.94. Relevant coursework includes Data Visualization, Fundamentals of Statistical Learning and Pattern Recognition, Foundation of Algorithms, Data Mining,
+                Data Intensive Systems for Machine Learning, Knowledge Representation and Reasoning
               </p>
             </li>
         
@@ -534,7 +560,8 @@
               <span>August 2019 – May 2023</span>
               <p class="timeline-text">
                 Vivekanand Education Society’s Institute of Technology, Mumbai, India. Achieved a CGPA of 3.8. 
-                Relevant coursework included Data Visualization, Machine Learning, Data Science, and Software Engineering.
+                Relevant coursework included Data Mining, Artificial Intelligence, Data Science, Cloud Computing, Software Development, Software Engineering, Big Data Analytics, Blockchain, Database Management
+                System, Data Structure and Analysis, Database Management.
               </p>
             </li>
         
@@ -955,70 +982,52 @@
         </section>
 
       </article> -->
-      <article class="portfolio" data-page="portfolio">
-
+      <article class="projects" data-page="projects">
         <header>
-          <h2 class="h2 article-title">Portfolio</h2>
+          <h2 class="h2 article-title">Projects</h2>
         </header>
       
-        <section class="projects">
-      
+        <section class="projects-section">
           <ul class="filter-list">
-      
             <li class="filter-item">
               <button class="active" data-filter-btn>All</button>
             </li>
-      
             <li class="filter-item">
               <button data-filter-btn>Machine Learning</button>
             </li>
-      
             <li class="filter-item">
               <button data-filter-btn>Data Analysis and Visualization</button>
             </li>
-      
             <li class="filter-item">
               <button data-filter-btn>Web Development</button>
             </li>
-      
           </ul>
       
           <div class="filter-select-box">
-      
             <button class="filter-select" data-select>
-      
               <div class="select-value" data-selecct-value>Select category</div>
-      
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
               </div>
-      
             </button>
       
             <ul class="select-list">
-      
               <li class="select-item">
                 <button data-select-item>All</button>
               </li>
-      
               <li class="select-item">
                 <button data-select-item>Machine Learning</button>
               </li>
-      
               <li class="select-item">
                 <button data-select-item>Data Analysis and Visualization</button>
               </li>
-      
               <li class="select-item">
                 <button data-select-item>Web Development</button>
               </li>
-      
             </ul>
-      
           </div>
       
           <ul class="project-list">
-      
             <!-- Machine Learning Projects -->
             <li class="project-item active" data-filter-item data-category="machine learning">
               <a href="https://github.com/Soham1712/Explore-Beyond">
@@ -1080,7 +1089,7 @@
                   </div>
                   <img src="./assets/images/project-1.jpg" alt="Financial Dashboard" loading="lazy">
                 </figure>
-                <h3 class="project-title">Financial Dashboard </h3>
+                <h3 class="project-title">Financial Dashboard</h3>
                 <p class="project-category">Data Analysis and Visualization</p>
               </a>
             </li>
@@ -1111,11 +1120,8 @@
                 <p class="project-category">Web Development</p>
               </a>
             </li>
-      
           </ul>
-      
         </section>
-      
       </article>
       
 
