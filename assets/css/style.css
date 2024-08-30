@@ -911,6 +911,7 @@ main {
 
  .skills-title, .technologies-title {
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .skills-list, .technologies-list {
